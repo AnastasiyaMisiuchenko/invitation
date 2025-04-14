@@ -2,12 +2,20 @@ html, body {
     margin: 0;
     height: 100%;
     touch-action: pan-y;
-    /* background-image: url("images/main.jpg");*/
-    background-image: url("images/backgr5.JPG");
-
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
+
+}
+@media only screen and (max-width: 600px){
+    html, body {
+        margin: 0;
+        height: 100%;
+        touch-action: pan-y;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
 }
 @keyframes fadeIn {
     0% {
@@ -29,44 +37,6 @@ html, body {
     font-family: 'Interea';
     src: url('fonts/Interea.ttf') format('truetype');
 }
-.mainBlock{
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* высота на весь экран */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: column;
-}
-.mainPhoto{
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* обрезает по высоте, растягивает по ширине */
-    object-position: top; /* обрезает то, что снизу */
-    display: block; /* не позволяет скролить по горизонтали */
-}
-.overlap1{
-    position: absolute;
-    top: 10%; /* вверх */
-    left: 50%;
-    transform: translateX(-50%);
-    color: #ffffff;
-    font-size: 15px;
-    text-align: center;
-    font-family: Interea;
-    max-width: 100%;
-    line-height: 1.4;
-    opacity: 0;
-    animation: fadeIn 3s forwards;
-}
-
-.overlap1 p{
-    font-family: GreatVibes;
-    font-size: 110px;
-    margin-bottom: 10px;
-}
-
 @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
@@ -78,10 +48,79 @@ html, body {
         background-position: 0% 50%;
     }
 }
-
+.mainBlock{
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* высота на весь экран */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+@media only screen and (max-width: 600px){
+    .mainBlock{
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* высота на весь экран */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        flex-direction: column;
+    }
+}
+.mainPhoto{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* обрезает по высоте, растягивает по ширине */
+    object-position: top; /* обрезает то, что снизу */
+    display: block; /* не позволяет скролить по горизонтали */
+}
+.overlap{
+    position: absolute;
+    top: 20%; /* вверх */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #5e5b5b;
+    font-size: 15px;
+    text-align: center;
+    font-family: Interea;
+    max-width: 100%;
+    line-height: 1.4;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+@media only screen and (max-width: 600px){
+    .overlap{
+        position: absolute;
+        top: 0px; /* вверх */
+        transform: translateX(-50%);
+        color: #5e5b5b;
+        font-size: 15px;
+        text-align: center;
+        font-family: Interea;
+        max-width: 100%;
+        line-height: 0.9;
+        opacity: 0;
+        animation: fadeIn 3s forwards;
+    }
+}
+.overlap p{
+    font-family: GreatVibes;
+    font-size: 110px;
+    margin-bottom: 10px;
+}
+@media only screen and (max-width: 600px){
+    .overlap p{
+        font-family: GreatVibes;
+        font-size: 90px;
+        margin-bottom: 10px;
+    }
+}
 .timer{
     position: absolute; /*чтобы перекрывалось фото*/
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -98,7 +137,10 @@ html, body {
 }
 .timer h2{
     font-weight: 100;
-    margin-bottom: 3%;
+    margin-bottom: 0%;
+    background: rgba(0, 0, 0, 0.2); /* для полупрозрачного эффекта */
+    width: 100%;
+    padding: 10px 0 0 0;
 }
 .block {
     display: flex;
@@ -107,8 +149,22 @@ html, body {
     gap: 30px;
     color: white;
     font-family: Interea;
-    padding: 40px;
+    padding: 20px;
     background: rgba(0, 0, 0, 0.2); /* для полупрозрачного эффекта */
+    margin-top: 0;
+}
+@media only screen and (max-width: 600px){
+    .block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        color: white;
+        font-family: Interea;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.2); /* для полупрозрачного эффекта */
+        margin-top: 0;
+    }
 }
 .countdown{
     text-align: center;
@@ -128,6 +184,17 @@ html, body {
     background-color: white;
     opacity: 0.3;
 }
+@media only screen and (max-width: 600px){
+    .num{
+        font-size: 35px;
+        font-weight: bold;
+        display: block;
+        letter-spacing: 2px;
+    }
+    .label{
+        font-size: 15px;
+    }
+}
 .invitation{
     background-color: white;
     padding: 40px 20px;
@@ -135,10 +202,20 @@ html, body {
     background-image: none;
 }
 .invitation h1 {
-    font-size: 70px;
+    font-size: 80px;
     margin-bottom: 20px;
     font-family: GreatVibes;
     font-weight: 100;
+}
+@media only screen and (max-width: 600px){
+    .invitation h1 {
+        font-size: 60px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-family: GreatVibes;
+        font-weight: 100;
+        line-height: 0.9;
+    }
 }
 .invitation h2 {
     font-size: 20px;
@@ -149,6 +226,13 @@ html, body {
 .map{
     margin-top: 50px;
     margin-bottom: 50px;
+}
+@media only screen and (max-width: 600px){
+    .map{
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+    }
 }
 .line{
     border-top: 1px solid #e0dede; /* светло-серая линия */
@@ -172,21 +256,40 @@ html, body {
     background-size: cover; /* Растягивает картинку, чтобы она покрывала весь элемент */
     background-position: center center; /* Центрирует картинку */
     background-attachment: fixed; /* Закрепляет фон при прокрутке */
-    height: 60%; /* Высота элемента — 100% высоты экрана */
+    height: 80%; /* Высота элемента — 100% высоты экрана */
     display: flex; /* Чтобы элементы внутри .chat (например, .textChat) были расположены красиво */
     justify-content: center; /* Центрирует блок .textChat по горизонтали */
     align-items: center; /* Центрирует блок .textChat по вертикали */
     color: #111111; /* Сделает текст светлым для контраста с фоном */
     text-align: center; /* Центрирует текст внутри .textChat */
-    overflow: hidden;
 }
 .textChat{
-    background-color: white; /* Белый фон для .textChat */
-    padding: 60px 20px; /* Отступы для блока с текстом */
+    background: rgba(255, 255, 255, 0.8); /* для полупрозрачного эффекта */
+   /* background-color: white; /* Белый фон для .textChat */
+    padding: 50px 50px; /* Отступы для блока с текстом */
     border-radius: 10px; /* Округление углов */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень для отделения от фона */
     max-width: 75%;
     width: 100%; /* Ширина блока — 100% от доступного пространства */
+}
+@media only screen and (max-width: 600px){
+    .textChat{
+        background: rgba(255, 255, 255, 0.65); /* для полупрозрачного эффекта */
+        /* background-color: white; /* Белый фон для .textChat */
+        padding: 30px 20px; /* Отступы для блока с текстом */
+        border-radius: 10px; /* Округление углов */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень для отделения от фона */
+        max-width: 75%;
+        width: 100%; /* Ширина блока — 100% от доступного пространства */
+    }
+    .textChat h1 {
+        font-family: Interea;
+        font-weight: 100;
+        margin-bottom: 5px;
+    }
+    .chat .textChat h1 {
+        font-size: 25px;
+    }
 }
 .textChat h1 {
     font-size: 30px;
@@ -199,18 +302,31 @@ html, body {
     background: linear-gradient(45deg, rgba(91, 91, 91, 0.84), rgba(59, 54, 54, 0.84), rgba(91, 91, 91, 0.84), #111111); /* Градиент */
     background-size: 1000% 100%; /* Устанавливаем размер градиента для анимации */
     color: white; /* Белый текст на кнопке */
+    margin-top: 20px;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     font-size: 16px;
     font-family: Interea;
-    width: 100%;
+    width: 20%;
     height: 10%;
     transition: transform 0.3s ease; /* Плавный переход для увеличения */
     position: relative;
 }
 .transition:hover{
-    transform: scale(1.02); /* Увеличивает кнопку на 10% при наведении */
+    transform: scale(1.03); /* Увеличивает кнопку на 10% при наведении */
+}
+@media only screen and (max-width: 600px){
+    .transition{
+        padding: 10px 20px;
+        border: none;
+        font-size: 10px;
+        font-family: Interea;
+        width: 40%;
+        height: 10%;
+        transition: transform 0.3s ease; /* Плавный переход для увеличения */
+        position: relative;
+    }
 }
 .form{
     background-color: white;
