@@ -292,12 +292,12 @@ html, body {
     }
 }
 .textChat h1 {
-    font-size: 30px;
+    font-size: 25px;
     font-family: Interea;
-    font-weight: 100;
+    font-weight: 200;
     margin-bottom: 20px;
 }
-.transition{
+.transition, .send{
     animation: gradientShift 5s ease infinite;
     background: linear-gradient(45deg, rgba(91, 91, 91, 0.84), rgba(59, 54, 54, 0.84), rgba(91, 91, 91, 0.84), #111111); /* Градиент */
     background-size: 1000% 100%; /* Устанавливаем размер градиента для анимации */
@@ -313,7 +313,7 @@ html, body {
     transition: transform 0.3s ease; /* Плавный переход для увеличения */
     position: relative;
 }
-.transition:hover{
+.transition:hover, .send:hover{
     transform: scale(1.03); /* Увеличивает кнопку на 10% при наведении */
 }
 @media only screen and (max-width: 600px){
@@ -345,5 +345,150 @@ html, body {
     margin-bottom: 20px;
     font-family: Interea;
     font-weight: 100;
+}
+.modalWindow{
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* затемнение */
 
 }
+.content{
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 40px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    font-family: Interea;
+}
+
+
+.close {
+     color: #aaa;
+     float: right;
+     font-size: 50px;
+     font-weight: bold;
+     cursor: pointer;
+ }
+
+.close:hover {
+    color: black;
+}
+form label {
+    display: block;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+.radio-label {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 18px;
+    position: relative;
+}
+
+/* внешний круг */
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    transition: border 0.2s ease;
+}
+
+.radio-custom::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #810a0a;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+input[type="radio"]:checked + .radio-custom::after {
+    opacity: 1;
+}
+
+/* эффект наведения */
+.radio-label:hover .radio-custom {
+    border-color: #999;
+}
+.send{
+    width: 50%;
+}
+.comment {
+    margin-top: 0;
+    text-align: left;
+    padding: 0px;
+
+}
+.content h3{
+    padding: 0px;
+    font-family: Interea;
+}
+.text-input {
+    font-family: Interea;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px dashed  #ccc;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.text-input:focus {
+    border-bottom-color: #999;
+}
+.contact-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #857b7b;
+    color: white;
+    font-size: 24px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.contact-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 80px;
+    z-index: 1000;
+}
+
+.contact-box {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-width: 250px;
+}
+
+

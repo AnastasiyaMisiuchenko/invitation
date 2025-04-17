@@ -41,3 +41,34 @@ function timer(){
 }
 timer();
 setInterval(timer, 1000);
+
+
+
+const modalWindow = document.querySelector(".modalWindow");
+const openBtn = document.getElementById("modalW");
+const closeBtn = document.querySelector(".close");
+
+openBtn.onclick = () => {
+    modalWindow.style.display = "block";
+};
+
+closeBtn.onclick = () => {
+    modalWindow.style.display = "none";
+    document.getElementById('attendance').reset();
+
+};
+
+window.onclick = (event) => {
+    if (event.target == modalWindow) {
+        modalWindow.style.display = "none";
+        document.getElementById('attendance').reset();
+    }
+};
+
+function showContactBox() {
+    document.getElementById('contact-overlay').style.display = 'flex';
+}
+
+function hideContactBox() {
+    document.getElementById('contact-overlay').style.display = 'none';
+}

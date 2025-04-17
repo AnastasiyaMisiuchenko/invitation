@@ -47,7 +47,7 @@
     <h1>Место проведения торжества</h1>
     <h2>Минский район, Острошицко-Городокский сельсовет, деревня Раубичи</h2>
     <div class="map">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A475f31dd8fc0102e762fe425b2c0292c35b411bb31bc1b829fce99b8dcae7f9e&amp;source=constructor" width="85%" height="400" frameborder="0"></iframe>
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6dfedf2186753606b3b8725d7dd58296bab8292ae235a7bb8838c5a29bce1f76&amp;source=constructor" width="85%" height="400" frameborder="0"></iframe>
     </div>
     <h2>P.S. Нам очень важно, чтобы каждый чувствовал себя комфортно, поэтому в конце торжества Вас будет ждать трансфер, который довезет всех гостей до Минска.</h2>
     <div class="line"></div>
@@ -60,24 +60,65 @@
         <h2>17:00</h2>
         <p>Банкет</p>
     </div>
+    <div class="line"></div>
+    <!-- <h2>Ваши улыбки и смех подарят нам незабываемое счастье в этот день, а пожелания в конвертах помогут осуществить наши мечты! </h2> -->
+    <h2>Мы будем рады, если вы откажетесь от покупки живых цветов и замените их бутылочкой любого алкогольного напитка или книгой на ваш вкус для нашей домашней коллекции.</h2>
 </section>
 <section class="chat">
     <img src="images/backgr5.JPG"alt="Background Image" style="display: none;">
     <div class="textChat">
         <h1>Чтобы сохранить незабываемые мгновения этого дня, мы создали телеграм канал, где вы сможете делиться своими фотографиями и видео с вечера. Если у вас возникнут вопросы о нашей свадьбе, с радостью ответим на них прямо в этом канале. </h1>
-        <button class="transition">ПРИСОЕДИНИТЬСЯ</button>
+        <button class="transition" id="tlgrm">ПРИСОЕДИНИТЬСЯ</button>
     </div>
 </section>
 <section class="form">
-    <h2>Ваши улыбки и смех подарят нам незабываемое счастье в этот день, а пожелания в конвертах помогут осуществить наши мечты! </h2>
-    <div class="line"></div>
-    <h2>Мы будем рады, если вы откажетесь от покупки живых цветов и замените их бутылочкой любого алкогольного напитка или книгой на ваш вкус для нашей домашней коллекции.</h2>
-    <div class="line"></div>
     <h1>Присутствие на торжестве</h1>
     <h2>Мы очень стараемся сделать праздник незабываемым, поэтому будем рады, если Вы подтвердите свое присутствие
         до 1 июля. </h2>
-    <button class="transition">ОТПРАВИТЬ ОТВЕТ</button>
+    <button class="transition" id="modalW">ОТПРАВИТЬ ОТВЕТ</button>
 </section>
+<div class="modalWindow">
+    <div class="content">
+        <span class="close">&times;</span>
+        <h3>Сможете ли вы присутствовать на торжестве?</h3>
+        <form id="attendance">
+            <label class="radio-label">
+                <input type="radio" name="answer" value="yes">
+                <span class="radio-custom"></span>
+                Приду
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="answer" value="no">
+                <span class="radio-custom"></span>
+                Не приду
+            </label>
+            <div class="comment">
+                <h3>Если у вас есть аллергия на какие-то продукты?</h3>
+                <input type="text" name="allrg" class="text-input">
+                <h3>Если какие-то предпочтения по еде?</h3>
+                <input type="text" name="eat" class="text-input">
+                <h3>Какой алкоголь вы хотели бы видеть на столе?</h3>
+                <input type="text" name="alco" class="text-input">
+                <h3>Нужен ли Вам трансфер к месту торжества?</h3>
+                <input type="text" name="car" class="text-input">
+                <h3>Будет ли присутствовать на свадьбе вся Ваша семья?</h3>
+                <input type="text" name="fam" class="text-input">
+            </div>
+        </form>
+        <button class="send">ОТПРАВИТЬ</button>
+    </div>
+</div>
+<div id="contact-overlay" class="contact-overlay" onclick="hideContactBox()">
+    <div class="contact-box" onclick="event.stopPropagation()">
+        <strong>Наши контакты:</strong><br>
+        ☎ Жених: +375 29 ххх хх хх<br>
+        ☎ Невеста: +375 29 ххх хх хх
+    </div>
+</div>
+<div class="contact-button" onclick="showContactBox()">
+    ☎
+</div>
+
 
 
 <script src="script.js"></script>
